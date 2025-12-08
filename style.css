@@ -59,7 +59,7 @@ p {
 
 /* ✅ LOGO FIX — properly controlled size */
 .logo {
-  width: 90px;        /* MUCH smaller */
+  width: 10px;        /* MUCH smaller */
   max-width: 100%;
   height: auto;
   margin-bottom: 15px;
