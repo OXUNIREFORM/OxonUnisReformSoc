@@ -94,3 +94,13 @@ p {
   width: 48%;
   border-radius: 8px;
 }
+
+/* Make linked headings look like real headings */
+.content h2 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.content h2 a:hover {
+  text-decoration: underline;
+}
