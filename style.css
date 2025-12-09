@@ -92,7 +92,7 @@ p {
   color: white;
 }
 
-logo {
+.logo {
   width: 80px;       /* controlled size */
   height: auto;
   flex-shrink: 0;    /* prevent shrinking */
