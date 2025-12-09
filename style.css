@@ -59,6 +59,10 @@ p {
   background-color: #fff; /* optional, same as main */
 }
 
+.hero {
+  text-align: left;  /* stops centring everything */
+}
+
 .hero-container {
   display: flex;
   align-items: center;
@@ -93,10 +97,11 @@ p {
   color: white;
 }
 
-logo {
-  width: 80px;       /* controlled size */
+.logo {
+  width: 80px;        /* controls size properly */
   height: auto;
-  flex-shrink: 0;    /* prevent shrinking */
+  flex-shrink: 0;
+  align-self: flex-start;   /* keeps it top-left */
 }
 
 /* Intro text */
