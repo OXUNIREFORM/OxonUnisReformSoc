@@ -184,3 +184,40 @@ p {
 .join-btn:hover {
   background: #333;
 }
+
+.termcard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.termcard-table th,
+.termcard-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.termcard-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.termcard-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #111;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.download-btn:hover {
+  background-color: #333;
+}
