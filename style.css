@@ -63,10 +63,26 @@ p {
   text-align: left;  /* stops centring everything */
 }
 
+.hero-text {
+  margin-top: 5px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  line-height: 1.25;
+}
+
 .hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 0 80px; /* extra left padding */
+
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .hero-text .intro {
@@ -102,6 +118,7 @@ p {
   height: auto;
   flex-shrink: 0;
   align-self: flex-start;   /* keeps it top-left */
+  margin-left: 10px;
 }
 
 /* Intro text */
