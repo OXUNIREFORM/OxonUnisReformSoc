@@ -34,71 +34,6 @@ p {
   font-size: 1rem;
 }
 
-/* Hero section as flex row */
-.hero {
-  margin-bottom: 40px;
-  padding: 20px 0;
-  background-color: #d9ecff;  
-  text-align: left;  
-}
-
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
-.hero-text {
-  margin-top: 5px;
-  max-width: 600px;
-  text-align: center;
-}
-
-.hero-text h1 {
-  line-height: 1.25;
-}
-
-.hero-text .intro {
-  font-size: 1.1rem;
-  color: #444;
-  margin-top: 10px;
-}
-
-.logo {
-  width: 80px;
-  height: auto;
-  flex-shrink: 0;
-}
-
-/* Hero links (full-width below hero) */
-.hero-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;               
-  margin: 25px 0;          
-  background-color: #d9ecff;
-  padding: 10px 0;
-  border-radius: 5px;
-}
-
-.hero-links a {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.hero-links a:hover {
-  background-color: #fff;
-  color: #111;
-}
-
 /* Content headings */
 .content h2 {
   margin-top: 40px;
@@ -209,7 +144,7 @@ p {
 .header-nav a {
   margin: 0 0.75rem;
   text-decoration: none;
-  color: #00008B
+  color: #00008B; /* visible dark links */
 }
 
 .header-nav a:hover {
