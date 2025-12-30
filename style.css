@@ -117,7 +117,7 @@ p {
 
 .site-header {
   background: #d9ecff;
-  border: 3px solid #b0d4f1;   /* applies to all sides */
+  border: 5px solid #b0d4f1;   /* applies to all sides */
   position: sticky;
   top: 0;
   z-index: 1000;
