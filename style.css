@@ -115,10 +115,9 @@ p {
   background-color: #fafafa;
 }
 
-/* Site header */
 .site-header {
   background: #d9ecff;
-  border-bottom: 3px solid #b0d4f1;
+  border: 3px solid #b0d4f1;   /* applies to all sides */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -135,9 +134,13 @@ p {
   gap: 2rem;
 }
 
-.site-title {
-  font-weight: 600;
-  font-size: 1.1rem;
+.site-header {
+  background: #d9ecff;
+  border: 3px solid #b0d4f1;   /* applies to all sides */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 2rem 0;
 }
 
 /* Header nav */
@@ -148,7 +151,7 @@ p {
 }
 
 .header-nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   background: none;
 }
 
