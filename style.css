@@ -8,18 +8,16 @@
 
 /* Whole page background */
 body {
-  background-color: #f2f2f2;
+  background-color: #d9ecff;
   color: #222;
   line-height: 1.6;
 }
 
 /* Expand content to full width */
 main {
-  max-width: 1200px;  
-  margin: 50px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 /* Primary heading */
