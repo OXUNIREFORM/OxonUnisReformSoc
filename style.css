@@ -237,3 +237,55 @@ p {
 .download-btn:hover {
   background-color: #333;
 }
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.header-nav a {
+  margin: 0 0.75rem;
+  text-decoration: none;
+  color: #111;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+.header-social img {
+  height: 18px;
+  margin: 0 0.4rem;
+}
+
+.join-button {
+  background: #111;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.join-button:hover {
+  background: #333;
+}
