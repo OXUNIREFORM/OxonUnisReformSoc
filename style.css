@@ -39,9 +39,6 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
-  pointer-events: none;
-  z-index: 999;
-}
 /* Expand content to full width */
 main {
   max-width: 1200px;
