@@ -6,10 +6,16 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  background-color: #d9ecff;
+}
+
+html, body {
+  min-height: 100%;
+}
 /* Whole page background */
 body {
   background-color: #d9ecff;
-  color: #222;
   line-height: 1.6;
 }
 
