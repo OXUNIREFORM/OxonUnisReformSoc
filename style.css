@@ -134,15 +134,6 @@ p {
   gap: 2rem;
 }
 
-.site-header {
-  background: #d9ecff;
-  border: 3px solid #b0d4f1;   /* applies to all sides */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 2rem 0;
-}
-
 .site-title a {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.5rem;       /* increase size */
