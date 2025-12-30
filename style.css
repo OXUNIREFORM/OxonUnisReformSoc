@@ -143,6 +143,17 @@ p {
   padding: 2rem 0;
 }
 
+.site-title a {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;       /* increase size */
+  color: #00008B;          /* dark blue */
+  text-decoration: none;   /* remove underline */
+}
+
+.site-title a:hover {
+  text-decoration: none;   /* ensure no underline on hover */
+}
+
 /* Header nav */
 .header-nav a {
   margin: 0 0.75rem;
