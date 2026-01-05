@@ -27,20 +27,18 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 280px;
+  height: 160px; /* ends just after header */
 
   background: linear-gradient(
     to bottom,
-    rgba(0, 30, 80, 0.45),
-    rgba(0, 30, 80, 0.30),
-    rgba(0, 30, 80, 0.15),
-    rgba(217, 236, 255, 0)
+    rgba(0, 30, 80, 0.45) 0%,
+    rgba(0, 30, 80, 0.30) 35%,
+    rgba(217, 236, 255, 0) 100%
   );
 
   pointer-events: none;
   z-index: 0;
 }
-
 /* Expand content to full width */
 main {
   max-width: 1200px;
