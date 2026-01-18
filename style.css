@@ -244,3 +244,16 @@ p {
   font-size: 1.6rem;
   color: #00008B;
 }
+
+.header-nav {
+  display: flex;
+  align-items: center;     
+  gap: 1rem;
+  flex-wrap: wrap;        
+}
+
+.header-nav a {
+  display: inline-flex;    
+  align-items: center;    
+  line-height: 1;          
+}
