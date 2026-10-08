@@ -172,63 +172,6 @@ p {
   color: #fff;
 }
 
-/* Term Card sign-up callout */
-.nav-highlight {
-  position: relative;
-}
-
-.nav-callout {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  pointer-events: none;
-  animation: nav-callout-pulse 1.7s ease-in-out infinite;
-}
-
-.nav-callout-arrow {
-  width: 30px;
-  height: 30px;
-  display: block;
-  filter: drop-shadow(0 2px 4px rgba(6, 49, 56, 0.3));
-}
-
-.nav-callout-text {
-  margin-top: 2px;
-  background: #fff;
-  color: var(--navy);
-  font-family: var(--font-serif);
-  font-size: 0.78rem;
-  font-weight: 700;
-  line-height: 1.25;
-  padding: 0.4rem 0.65rem;
-  border-radius: 9px;
-  box-shadow: var(--shadow-md);
-  white-space: nowrap;
-  text-align: center;
-}
-
-@keyframes nav-callout-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateX(-50%) translateY(-4px);
-  }
-}
-
-@media (max-width: 720px) {
-  .nav-callout {
-    display: none;
-  }
-}
-
 .header-social {
   display: flex;
   align-items: center;
