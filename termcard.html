@@ -58,12 +58,150 @@
         </svg>
       </div>
 
-      <h2>Term Card</h2>
-      <p class="intro">Coming soon.</p>
+      <h2>Michaelmas Term 2026</h2>
+      <p class="intro">
+        Sunday 11 October – Saturday 5 December. Drag a page corner, tap the edges, or use the
+        arrows to turn the pages.
+      </p>
 
+      <div class="flipbook-stage" id="flipbook-stage">
+        <button type="button" class="flip-arrow flip-arrow-prev" id="flip-prev" aria-label="Previous page" disabled>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="flipbook-frame">
+          <div class="flipbook" id="flipbook"></div>
+        </div>
+
+        <button type="button" class="flip-arrow flip-arrow-next" id="flip-next" aria-label="Next page">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="flipbook-status">
+        <span id="flip-counter" aria-live="polite">Cover</span>
+        <div class="flip-progress" aria-hidden="true"><span id="flip-progress-bar"></span></div>
+      </div>
+    </section>
+
+    <section class="content termcard-all">
+      <details id="all-pages">
+        <summary>
+          <span>View all pages</span>
+          <svg class="summary-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="all-pages-note">Every page in order, for easy scrolling.</p>
+        <div class="all-pages-list">
+          <img src="images/termcard/page-01.jpg?v=mt26" alt="Term card cover" loading="lazy" draggable="false">
+          <img src="images/termcard/page-02.jpg?v=mt26" alt="Term card page 2" loading="lazy" draggable="false">
+          <img src="images/termcard/page-03.jpg?v=mt26" alt="Term card page 3" loading="lazy" draggable="false">
+          <img src="images/termcard/page-04.jpg?v=mt26" alt="Term card page 4" loading="lazy" draggable="false">
+          <img src="images/termcard/page-05.jpg?v=mt26" alt="Term card page 5" loading="lazy" draggable="false">
+          <img src="images/termcard/page-06.jpg?v=mt26" alt="Term card page 6" loading="lazy" draggable="false">
+          <img src="images/termcard/page-07.jpg?v=mt26" alt="Term card page 7" loading="lazy" draggable="false">
+          <img src="images/termcard/page-08.jpg?v=mt26" alt="Term card page 8" loading="lazy" draggable="false">
+          <img src="images/termcard/page-09.jpg?v=mt26" alt="Term card page 9" loading="lazy" draggable="false">
+          <img src="images/termcard/page-10.jpg?v=mt26" alt="Term card page 10" loading="lazy" draggable="false">
+          <img src="images/termcard/page-11.jpg?v=mt26" alt="Term card page 11" loading="lazy" draggable="false">
+        </div>
+      </details>
     </section>
 
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script>
+    (function () {
+      // Bump VERSION when the page images are replaced so browsers don't show a cached old card.
+      var PAGE_COUNT = 11;
+      var VERSION = 'mt26';
+
+      var stage = document.getElementById('flipbook-stage');
+      var book = document.getElementById('flipbook');
+      var prevBtn = document.getElementById('flip-prev');
+      var nextBtn = document.getElementById('flip-next');
+      var counter = document.getElementById('flip-counter');
+      var bar = document.getElementById('flip-progress-bar');
+
+      document.querySelectorAll('.flipbook-stage, .all-pages-list').forEach(function (el) {
+        el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+      });
+
+      if (typeof St === 'undefined') {
+        stage.hidden = true;
+        document.querySelector('.flipbook-status').hidden = true;
+        document.getElementById('all-pages').open = true;
+        return;
+      }
+
+      for (var i = 1; i <= PAGE_COUNT; i++) {
+        var page = document.createElement('div');
+        page.className = 'flip-page';
+        if (i === 1) page.setAttribute('data-density', 'hard');
+        var img = document.createElement('img');
+        img.src = 'images/termcard/page-' + String(i).padStart(2, '0') + '.jpg?v=' + VERSION;
+        img.alt = i === 1 ? 'Term card cover' : 'Term card page ' + i;
+        img.draggable = false;
+        page.appendChild(img);
+        book.appendChild(page);
+      }
+
+      var flip = new St.PageFlip(book, {
+        width: 420,
+        height: 595,
+        size: 'stretch',
+        minWidth: 200,
+        maxWidth: 700,
+        minHeight: 340,
+        maxHeight: 990,
+        showCover: true,
+        usePortrait: true,
+        mobileScrollSupport: true,
+        maxShadowOpacity: 0.45,
+        flippingTime: 750
+      });
+      flip.loadFromHTML(book.querySelectorAll('.flip-page'));
+
+      function update() {
+        var index = flip.getCurrentPageIndex();
+        var landscape = flip.getOrientation() === 'landscape';
+        var label;
+        if (index === 0) {
+          label = 'Cover';
+        } else if (landscape && index + 1 < PAGE_COUNT) {
+          label = 'Pages ' + (index + 1) + '–' + (index + 2) + ' of ' + PAGE_COUNT;
+        } else {
+          label = 'Page ' + (index + 1) + ' of ' + PAGE_COUNT;
+        }
+        counter.textContent = label;
+
+        var lastVisible = landscape && index > 0 ? Math.min(index + 2, PAGE_COUNT) : index + 1;
+        bar.style.width = (lastVisible / PAGE_COUNT * 100) + '%';
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = lastVisible >= PAGE_COUNT;
+        // Centre the closed cover instead of leaving an empty left half.
+        stage.classList.toggle('is-cover', landscape && index === 0);
+      }
+
+      flip.on('flip', update);
+      flip.on('changeOrientation', update);
+      // Slide the book into place while the cover turns, rather than after it lands.
+      flip.on('changeState', function (e) {
+        if (e.data === 'flipping') stage.classList.remove('is-cover');
+        if (e.data === 'read') update();
+      });
+      flip.on('init', update);
+      update();
+
+      prevBtn.addEventListener('click', function () { flip.flipPrev(); });
+      nextBtn.addEventListener('click', function () { flip.flipNext(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.target.closest('input, textarea')) return;
+        if (e.key === 'ArrowLeft') flip.flipPrev();
+        if (e.key === 'ArrowRight') flip.flipNext();
+      });
+    })();
+  </script>
 
   <!-- Footer -->
   <footer class="site-footer">
