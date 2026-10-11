@@ -853,3 +853,65 @@ p {
     right: 4px;
   }
 }
+
+/* Event sign-up banner (term card page) */
+.event-signup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding: 1.6rem 2rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--blue-light), var(--blue) 55%, var(--navy));
+  box-shadow: var(--shadow-md);
+  color: #fff;
+}
+
+.event-signup-title {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.event-signup-meta {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.event-signup-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.event-signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 640px) {
+  .event-signup {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem 1.4rem;
+  }
+
+  .event-signup-title {
+    font-size: 1.6rem;
+  }
+}
