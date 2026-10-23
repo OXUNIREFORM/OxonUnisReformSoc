@@ -636,7 +636,8 @@ p {
   }
 }
 
-@media (max-width: 720px) {
+/* Below the header's max width the nav no longer fits on one row with the title */
+@media (max-width: 1160px) {
   .header-inner {
     flex-wrap: wrap;
     row-gap: 0.75rem;
@@ -651,6 +652,18 @@ p {
 
   .header-right {
     order: 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-nav {
+    flex-wrap: wrap;
+  }
+
+  .site-title a,
+  .site-title {
+    font-size: 1.15rem;
+    white-space: normal;
   }
 }
 
@@ -968,5 +981,135 @@ p {
   .event-signup-btn {
     align-self: stretch;
     justify-content: center;
+  }
+}
+
+/* ---------------- Events page ---------------- */
+
+.content .intro a {
+  color: var(--blue);
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 1.75rem;
+}
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(255, 255, 255, 0.2), transparent 55%),
+    linear-gradient(135deg, var(--blue-light), var(--blue) 50%, var(--navy));
+  box-shadow: var(--shadow-md);
+  color: #fff;
+}
+
+.event-card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -100px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 36px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.event-card-media {
+  position: relative;
+  min-height: 300px;
+}
+
+.event-card-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.event-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.5rem 2.75rem;
+}
+
+.event-card-subtitle {
+  margin: 0.4rem 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.event-card-desc {
+  margin: 0.9rem 0 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.event-card .event-signup-meta {
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.event-card .event-signup-btn {
+  margin-top: 1.6rem;
+}
+
+@media (max-width: 860px) {
+  .event-card {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card-media {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .event-card-body {
+    padding: 1.75rem 1.5rem 2rem;
+  }
+
+  .event-card .event-signup-btn {
+    align-self: stretch;
+    justify-content: center;
+  }
+}
+
+/* Show the whole image (e.g. a square poster) over a blurred copy of itself */
+.event-card-media--fit {
+  overflow: hidden;
+}
+
+.event-card-media--fit::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: var(--media-bg) center / cover;
+  filter: blur(18px) brightness(0.7);
+}
+
+.event-card-media--fit img {
+  object-fit: contain;
+}
+
+@media (max-width: 860px) {
+  .event-card-media--fit {
+    aspect-ratio: 1 / 1;
   }
 }
