@@ -262,6 +262,15 @@ p {
   flex-direction: row-reverse;
 }
 
+.split-inner.single {
+  justify-content: center;
+  text-align: center;
+}
+
+.split-inner.single .split-text {
+  max-width: 700px;
+}
+
 .split-image {
   flex: 1 1 44%;
 }
